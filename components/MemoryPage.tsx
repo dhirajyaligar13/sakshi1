@@ -39,7 +39,7 @@ export const MemoryPage: React.FC<MemoryPageProps> = ({ onNext }) => {
         >
           <div className="relative overflow-hidden w-full aspect-[4/5] bg-gray-50">
             <img 
-              src=src={dhirajsakshi}
+              src={dhirajsakshi}
               alt="Back in 2021"
               className="w-full h-full object-cover grayscale-[20%]"
             />
