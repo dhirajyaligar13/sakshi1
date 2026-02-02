@@ -2,34 +2,38 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-// Use React.FC to ensure standard props like 'key' are recognized by the TypeScript compiler
 const Heart: React.FC<{ delay: number }> = ({ delay }) => {
-  const [initialX, setInitialX] = useState(0);
+  const [props, setProps] = useState({ x: 0, size: 24, opacity: 0.3 });
   
   useEffect(() => {
-    setInitialX(Math.random() * 100);
+    setProps({
+      x: Math.random() * 100,
+      size: 10 + Math.random() * 30,
+      opacity: 0.1 + Math.random() * 0.3
+    });
   }, []);
 
   return (
     <motion.div
-      initial={{ y: '110vh', x: `${initialX}vw`, opacity: 0, scale: 0.5 }}
+      initial={{ y: '110vh', x: `${props.x}vw`, opacity: 0, scale: 0.5 }}
       animate={{ 
-        y: '-10vh', 
-        opacity: [0, 1, 1, 0],
-        rotate: [0, 45, -45, 0],
-        scale: [0.5, 1, 1.2, 0.8]
+        y: '-20vh', 
+        opacity: [0, props.opacity, props.opacity, 0],
+        rotate: [0, 90, -90, 0],
+        scale: [0.5, 1, 1.1, 0.7]
       }}
       transition={{ 
-        duration: 10 + Math.random() * 10, 
+        duration: 20 + Math.random() * 20, // Super slow drift
         repeat: Infinity, 
         delay,
         ease: "linear"
       }}
-      className="absolute text-pink-300 pointer-events-none z-0"
+      style={{ width: props.size, height: props.size }}
+      className="absolute text-pink-300/50 pointer-events-none z-0"
     >
       <svg
-        width="24"
-        height="24"
+        width="100%"
+        height="100%"
         viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -44,13 +48,14 @@ export const HeartBackground: React.FC = () => {
   const [hearts, setHearts] = useState<number[]>([]);
 
   useEffect(() => {
+    // Fill the screen with enough hearts for a continuous effect
     setHearts(Array.from({ length: 25 }, (_, i) => i));
   }, []);
 
   return (
-    <div className="fixed inset-0 overflow-hidden bg-gradient-to-br from-pink-50 to-red-50 -z-10">
+    <div className="fixed inset-0 overflow-hidden bg-gradient-to-b from-white via-pink-50/30 to-rose-100/20 -z-10">
       {hearts.map((h) => (
-        <Heart key={h} delay={h * 0.5} />
+        <Heart key={h} delay={h * 2} />
       ))}
     </div>
   );
