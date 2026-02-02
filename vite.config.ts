@@ -10,4 +10,4 @@ export default defineConfig({
     // with the actual value found in the environment during build time.
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
   }
-});
+}); 
