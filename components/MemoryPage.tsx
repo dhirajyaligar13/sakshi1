@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import confetti from 'canvas-confetti';
+import dhirajsakshi from '../assets/dhirajsakshi.jpeg';
 
 interface MemoryPageProps {
   onNext: () => void;
@@ -38,7 +39,7 @@ export const MemoryPage: React.FC<MemoryPageProps> = ({ onNext }) => {
         >
           <div className="relative overflow-hidden w-full aspect-[4/5] bg-gray-50">
             <img 
-              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=800" 
+              src=src={dhirajsakshi}
               alt="Back in 2021"
               className="w-full h-full object-cover grayscale-[20%]"
             />
