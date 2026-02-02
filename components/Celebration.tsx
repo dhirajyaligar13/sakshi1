@@ -11,7 +11,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ message }) => {
     <motion.div 
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="flex flex-col items-center text-center space-y-6"
+      className="flex flex-col items-center text-center space-y-6 z-10"
     >
       <motion.div
         animate={{ 
@@ -24,7 +24,7 @@ export const Celebration: React.FC<CelebrationProps> = ({ message }) => {
         💖
       </motion.div>
       
-      <h1 className="text-4xl md:text-6xl font-dancing text-red-600 drop-shadow-md">
+      <h1 className="text-5xl md:text-7xl font-great-vibes text-red-600 drop-shadow-md">
         I Knew You'd Say Yes!
       </h1>
       
@@ -32,9 +32,9 @@ export const Celebration: React.FC<CelebrationProps> = ({ message }) => {
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border-2 border-pink-200 max-w-md"
+        className="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl border-2 border-pink-200 max-w-md"
       >
-        <p className="text-xl md:text-2xl text-pink-700 italic font-medium leading-relaxed">
+        <p className="text-3xl md:text-4xl text-pink-700 font-caveat leading-tight">
           "{message}"
         </p>
       </motion.div>
