@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import confetti from 'canvas-confetti';
 import { HeartBackground } from './components/HeartBackground';
@@ -63,7 +63,7 @@ const App: React.FC = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-              className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-inner bg-pink-100"
+              className="w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden shadow-inner bg-pink-100 border-4 border-white"
             >
               <img 
                 src="https://picsum.photos/seed/romantic-cat/400/400" 
@@ -72,14 +72,14 @@ const App: React.FC = () => {
               />
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl font-pacifico text-red-500 text-center drop-shadow-sm leading-tight">
+            <h1 className="text-5xl md:text-7xl font-great-vibes text-red-600 text-center drop-shadow-sm leading-tight">
               Will you be my Valentine?
             </h1>
 
             <div className="flex flex-col md:flex-row gap-6 w-full justify-center items-center">
               <button
                 onClick={handleYes}
-                className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-12 rounded-full text-2xl shadow-lg transform hover:scale-110 active:scale-95 transition-all duration-200 min-w-[140px]"
+                className="font-montserrat bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-12 rounded-full text-2xl shadow-lg transform hover:scale-110 active:scale-95 transition-all duration-200 min-w-[140px]"
               >
                 Yes! 💖
               </button>
@@ -92,7 +92,7 @@ const App: React.FC = () => {
                   left: noButtonPos.x,
                   top: noButtonPos.y,
                 } : {}}
-                className={`bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-4 px-12 rounded-full text-2xl shadow-md transition-colors min-w-[140px] z-50`}
+                className={`font-montserrat bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-4 px-12 rounded-full text-2xl shadow-md transition-colors min-w-[140px] z-50`}
               >
                 No
               </motion.button>
@@ -103,7 +103,7 @@ const App: React.FC = () => {
         )}
       </AnimatePresence>
 
-      <footer className="fixed bottom-4 text-pink-400 text-sm opacity-50 font-dancing">
+      <footer className="fixed bottom-4 text-pink-400 text-lg opacity-60 font-dancing tracking-widest">
         Made with love just for you
       </footer>
     </div>
